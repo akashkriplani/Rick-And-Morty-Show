@@ -7,7 +7,7 @@
         <input
           type="checkbox"
           [value]="specie.value"
-          (change)="specieSelect(specie.value)"
+          (change)="specieSelect($event, specie.value)"
         />
         {{ specie.value }}
       </li>
@@ -20,7 +20,7 @@
         <input
           type="checkbox"
           [value]="gender.value"
-          (change)="genderSelect(gender.value)"
+          (change)="genderSelect($event, gender.value)"
         />
         {{ gender.value }}
       </li>
@@ -33,7 +33,7 @@
         <input
           type="checkbox"
           value="origin.value"
-          (change)="originSelect(origin.value)"
+          (change)="originSelect($event, origin.value)"
         />
         {{ origin.key }}
       </li>

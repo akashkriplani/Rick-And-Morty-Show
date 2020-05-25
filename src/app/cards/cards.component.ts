@@ -56,16 +56,27 @@ export class CardsComponent implements OnInit {
     }
   }
 
-  public filterSearch(obj: any): void {
-    const keyInput = obj.key;
-    this.charactersList = this.characters.filter((item) => {
-      for (const property in item) {
-        if (item.hasOwnProperty(property)) {
-          if (item[property] === obj.value) {
-            return true;
+  public filterSearch(filters: string[]): void {
+    if (filters && filters.length === 0) {
+      this.charactersList = this.characters;
+    } else {
+      this.charactersList = this.characters.filter((item) => {
+        for (const key in item) {
+          if (item.hasOwnProperty(key)) {
+            if (this.fetchFilteredSearchResults(item[key], filters)) {
+              return true;
+            }
           }
         }
+      });
+    }
+  }
+
+  private fetchFilteredSearchResults(item, filters): boolean {
+    for (const f of filters) {
+      if (item === f) {
+        return true;
       }
-    });
+    }
   }
 }

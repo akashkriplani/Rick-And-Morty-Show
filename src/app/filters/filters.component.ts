@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FilterInputService } from '../services/filter-input.service';
+import { IKeyValue } from '../interfaces/characters.interface';
 
 @Component({
   selector: 'app-filters',
@@ -8,21 +9,21 @@ import { FilterInputService } from '../services/filter-input.service';
 })
 
 export class FiltersComponent {
-  public filterArray: any[];
-  public allFilters: any[] = [];
+  public filterArray: IKeyValue[];
+  public allFilters: IKeyValue[] = [];
 
-  public species: any[] = [
+  public species: IKeyValue[] = [
     { key: 'species', value: 'Human' },
     { key: 'species', value: 'Mytholog' },
     { key: 'species', value: 'Other' }
   ];
 
-  public genders: any[] = [
+  public genders: IKeyValue[] = [
     { key: 'gender', value: 'Male' },
     { key: 'gender', value: 'Female' }
   ];
 
-  public origins: any[] = [
+  public origins: IKeyValue[] = [
     { key: 'Unknown', value: 'unknown' },
     { key: 'Post-Apocalyptic', value: 'apocalyptic' },
     { key: 'Nuptia 4', value: 'nuptia' },
@@ -31,27 +32,30 @@ export class FiltersComponent {
 
   constructor(private filterInputService: FilterInputService) {}
 
-  public specieSelect(value: string): void {
-    this.filterArray = this.applyAllFilters(this.species, value);
-    this.allFilters.push(...this.filterArray);
-    this.filterInputService.filter.next(...this.filterArray);
+  public specieSelect(event: any, value: string): void {
+    console.log(event.srcElement.checked);
+    this.filterArray = this.applyAllFilters(this.species, value, event.srcElement.checked);
+    this.setAllFilters();
   }
 
-  public genderSelect(value: string): void {
-    this.filterArray = this.applyAllFilters(this.genders, value);
-    this.allFilters.push(...this.filterArray);
-    this.filterInputService.filter.next(...this.filterArray);
+  public genderSelect(event: any, value: string): void {
+    this.filterArray = this.applyAllFilters(this.genders, value, event.srcElement.checked);
+    this.setAllFilters();
   }
 
-  public originSelect(value: string): void {
-    this.filterArray = this.applyAllFilters(this.origins, value);
-    this.allFilters.push(...this.filterArray);
-    this.filterInputService.filter.next(...this.filterArray);
+  public originSelect(event: any, value: string): void {
+    this.filterArray = this.applyAllFilters(this.origins, value, event.srcElement.checked);
+    this.setAllFilters();
   }
 
-  public applyAllFilters(array, value): any[] {
+  public applyAllFilters(array: IKeyValue[], value: string, isChecked: boolean): IKeyValue[] {
     return array.filter(item => {
-      return item.value === value;
+      return item.value === value && isChecked;
     });
+  }
+
+  private setAllFilters(): void {
+    this.allFilters.push(...this.filterArray);
+    this.filterInputService.filterSubject.next(...this.filterArray);
   }
 }
