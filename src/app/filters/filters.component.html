@@ -7,6 +7,7 @@
         <input
           type="checkbox"
           [value]="specie.value"
+          [checked]="specie?.checked"
           (change)="specieSelect($event, specie.value)"
         />
         {{ specie.value }}
@@ -20,6 +21,7 @@
         <input
           type="checkbox"
           [value]="gender.value"
+          [checked]="gender?.checked"
           (change)="genderSelect($event, gender.value)"
         />
         {{ gender.value }}
@@ -32,7 +34,8 @@
       <li *ngFor="let origin of origins">
         <input
           type="checkbox"
-          value="origin.value"
+          [value]="origin.value"
+          [checked]="origin?.checked"
           (change)="originSelect($event, origin.value)"
         />
         {{ origin.key }}

@@ -3,7 +3,7 @@
   (searchEvent)="search($event)"
   (filterKey)="filterSearch($event)"
 ></app-header>
-<div class="">
+<ng-container *ngIf="!isError; else errorTemplate">
   <ng-container *ngIf="charactersList && charactersList.length === 0; else characterListTemplate">
     No results found.
   </ng-container>
@@ -44,4 +44,7 @@
       </div>
     </div>
   </ng-template>
-</div>
+</ng-container>
+<ng-template #errorTemplate>
+  Cannot fetch data. Please try again by refreshing the page.
+</ng-template>

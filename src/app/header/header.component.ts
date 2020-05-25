@@ -17,21 +17,40 @@ export class HeaderComponent implements OnInit {
 
   constructor(private filterService: FilterInputService) {}
 
+  /**
+   * @description Applies filters on component load
+   * @memberof HeaderComponent
+   */
   public ngOnInit(): void {
     this.filterService.filterSubject.subscribe(data => {
       this.applyFilters(data);
     });
   }
 
+  /**
+   * @description Emits sort order on dropdown selection change
+   * @returns void
+   * @memberof HeaderComponent
+   */
   public valueChanged(): void {
     this.sort.emit(this.sortOrder);
   }
 
+  /**
+   * @description Emits a search event and filter data on the basis of input entered
+   * @memberof HeaderComponent
+   */
   public searchByName(): void {
     this.searchEvent.emit(this.nameSearch);
     this.nameSearch = '';
   }
 
+  /**
+   * @description Applies filters and shows on the header component
+   * @param  {IKeyValue} data
+   * @returns void
+   * @memberof HeaderComponent
+   */
   public applyFilters(data: IKeyValue): void {
     if (data) {
       const index = this.filtersList.indexOf(data.value);
@@ -44,9 +63,5 @@ export class HeaderComponent implements OnInit {
       this.filtersList = [];
     }
     this.filterKey.emit(this.filtersList);
-  }
-
-  public removeFilter(): void {
-    // TODO: To be implemented
   }
 }

@@ -7,5 +7,4 @@ import { IKeyValue } from '../interfaces/characters.interface';
 })
 export class FilterInputService {
   public filterSubject = new Subject<IKeyValue>();
-  constructor() {}
 }
