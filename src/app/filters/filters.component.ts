@@ -33,7 +33,6 @@ export class FiltersComponent {
   constructor(private filterInputService: FilterInputService) {}
 
   public specieSelect(event: any, value: string): void {
-    console.log(event.srcElement.checked);
     this.filterArray = this.applyAllFilters(this.species, value, event.srcElement.checked);
     this.setAllFilters();
   }
