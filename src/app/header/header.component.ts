@@ -45,4 +45,8 @@ export class HeaderComponent implements OnInit {
     }
     this.filterKey.emit(this.filtersList);
   }
+
+  public removeFilter(): void {
+    // TODO: To be implemented
+  }
 }

@@ -2,7 +2,8 @@
   <h1>Selected Filters</h1>
   <div>
     <span class="badge badge-secondary badgeChip"
-      *ngFor="let filter of filtersList">{{ filter }}</span>
+      *ngFor="let filter of filtersList">{{ filter }}
+      <i class="fa fa-times" (click)="removeFilter()"></i></span>
   </div>
 
   <p>Search by Name</p>
