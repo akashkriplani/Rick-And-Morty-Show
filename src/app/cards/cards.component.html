@@ -1,0 +1,47 @@
+<app-header
+  (sort)="sortCharacters($event)"
+  (searchEvent)="search($event)"
+  (filterKey)="filterSearch($event)"
+></app-header>
+<div class="">
+  <ng-container *ngIf="charactersList && charactersList.length === 0; else characterListTemplate">
+    No results found.
+  </ng-container>
+  <ng-template #characterListTemplate>
+    <div class="row cardRow">
+      <div class="col-md-3 col-xs-12 cardColumn" *ngFor="let character of charactersList">
+        <div class="card">
+          <img class="card-img-top" src="{{ character?.image }}" alt="Card image cap" />
+          <div class="overlay">
+            <h6>{{ character?.name }}</h6>
+            <span>id: {{ character?.id }} created: {{ character?.created | date: "y" }}</span>
+          </div>
+          <div class="card-body">
+            <table>
+              <tr>
+                <td>STATUS</td>
+                <td>{{ character?.status }}</td>
+              </tr>
+              <tr>
+                <td>SPECIES</td>
+                <td>{{ character?.species }}</td>
+              </tr>
+              <tr>
+                <td>GENDER</td>
+                <td>{{ character?.gender }}</td>
+              </tr>
+              <tr>
+                <td>ORIGIN</td>
+                <td>{{ character?.origin?.name }}</td>
+              </tr>
+              <tr>
+                <td>LAST LOCATION</td>
+                <td>{{ character?.location?.name }}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,35 @@
+<div class=" headerComponent">
+  <h1>Selected Filters</h1>
+  <div>
+    <span class="badge badge-secondary badgeChip"
+      *ngFor="let filter of filtersList">{{ filter }}</span>
+  </div>
+
+  <p>Search by Name</p>
+  <div class="row form-group searchContainer">
+    <div class="col-md-2 col-xs-12">
+      <input
+        type="text"
+        name="name"
+        class="form-control"
+        [(ngModel)]="nameSearch"
+        autocomplete="off"
+      />
+    </div>
+    <div class="col-md-1 col-xs-12">
+      <button (click)="searchByName()" class="form-control">Search</button>
+    </div>
+    <div class="col-md-6"></div>
+    <div class="col-md-3">
+      <select
+        name="sortbox"
+        [(ngModel)]="sortOrder"
+        (change)="valueChanged()"
+        class="float-right form-control"
+      >
+        <option value="ascending">Ascending</option>
+        <option value="descending">Descending</option>
+      </select>
+    </div>
+  </div>
+</div>

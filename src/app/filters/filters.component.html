@@ -1,0 +1,42 @@
+<div class="filterContainer">
+  <h1>Filters</h1>
+  <div class="species box">
+    <p class="ml-5 mt-2"><b>Species</b></p>
+    <ul>
+      <li *ngFor="let specie of species">
+        <input
+          type="checkbox"
+          [value]="specie.value"
+          (change)="specieSelect(specie.value)"
+        />
+        {{ specie.value }}
+      </li>
+    </ul>
+  </div>
+  <div class="gender box">
+    <p class="ml-5 mt-2"><b>Gender</b></p>
+    <ul>
+      <li *ngFor="let gender of genders">
+        <input
+          type="checkbox"
+          [value]="gender.value"
+          (change)="genderSelect(gender.value)"
+        />
+        {{ gender.value }}
+      </li>
+    </ul>
+  </div>
+  <div class="origin box">
+    <p class="ml-5 mt-2"><b>Origin</b></p>
+    <ul>
+      <li *ngFor="let origin of origins">
+        <input
+          type="checkbox"
+          value="origin.value"
+          (change)="originSelect(origin.value)"
+        />
+        {{ origin.key }}
+      </li>
+    </ul>
+  </div>
+</div>
