@@ -93,6 +93,10 @@ export class CardsComponent implements OnInit {
     this.isError = false;
     this.characters$.subscribe((data) => {
       this.characters = data.results;
+      this.characters = this.characters.map(a => {
+        a.created = ((new Date().getTime() - new Date(a.created).getTime()) / 31536000000).toFixed(0).toString();
+        return a;
+      });
       this.characters.sort((a, b) => a.id - b.id);
       this.charactersList = this.characters;
     }, error => {

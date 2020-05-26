@@ -14,7 +14,7 @@
           <img class="card-img-top" src="{{ character?.image }}" alt="Card image cap" />
           <div class="overlay">
             <h6>{{ character?.name }}</h6>
-            <span>id: {{ character?.id }} {{constants?.created}} {{ character?.created | date: "y" }}</span>
+            <span>{{constants?.id}} {{ character?.id }} {{constants?.created}} {{ character?.created + ' years ago' }}</span>
           </div>
           <div class="card-body">
             <table>
