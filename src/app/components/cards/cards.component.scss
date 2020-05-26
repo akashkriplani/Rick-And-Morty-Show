@@ -19,19 +19,56 @@ $color-orange: rgb(265, 165, 0);
       background-color: rgba(0, 0, 0, 0.5);
       color: $color-white;
       padding-left: 10px;
+      @media (min-width: 320px) {
+        top: 41.6%;
+      }
+      @media (min-width: 375px) {
+        top: 47%;
+      }
+      @media (min-width: 425px) {
+        top: 51%;
+      }
+      @media (min-width: 768px) {
+        top: 11.9%;
+      }
+      @media(min-width: 900px) {
+        top: 18%;
+      }
+      @media (min-width: 1024px) {
+        top: 23%;
+      }
+      @media (min-width: 1292px) {
+        top: 36%;
+      }
+      @media (min-width: 1320px) {
+        top: 36.7%;
+      }
+      @media (min-width: 1440px) {
+        top: 39.7%;
+      }
+      @media (min-width: 1536px) {
+        top: 41.2%;
+      }
     }
     .card-body {
       background-color: rgba(27, 27, 28, 0.9);
       color: $color-white;
       min-height: 270px;
       .card-table {
+        display: flex;
+        flex-direction: column;
         tr {
+          display: flex;
           border-bottom: 1px solid $color-grey;
           td {
+            display: flex;
+            flex: 1 1 0%;
             color: $color-darkgrey;
             &:last-child {
-              color: $color-orange;
+              flex: 1 1 0%;
+              flex-direction: row-reverse;
               text-align: right;
+              color: $color-orange;
             }
           }
           &:last-child {
