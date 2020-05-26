@@ -1,9 +1,12 @@
 <div class="header-component">
-  <h1>{{constants?.selectedFilters}}</h1>
-  <div>
-    <span class="badge badge-secondary badge-chip"
-      *ngFor="let filter of filtersList">{{ filter }}
-      <i class="fa fa-times"></i></span>
+
+  <div *ngIf="filtersList && filtersList.length > 0">
+    <h1>{{constants?.selectedFilters}}</h1>
+    <div>
+      <span class="badge badge-secondary badge-chip"
+        *ngFor="let filter of filtersList">{{ filter }}
+        <i class="fa fa-times"></i></span>
+    </div>
   </div>
 
   <p>{{constants?.searchByName}}</p>

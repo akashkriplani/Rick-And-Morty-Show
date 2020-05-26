@@ -10,9 +10,10 @@ $color-grey: #4d4d4d;
   .card {
     border: 1px solid $color-black;
     .card-overlay {
-      top: 39%;
+      position: absolute;
+      top: 42%;
       width: 100%;
-      background-color: rgba(27, 27, 28, 0.7);
+      background-color: rgba(0, 0, 0, 0.5);
       color: $color-white;
       padding-left: 10px;
     }
