@@ -1,7 +1,11 @@
+$color-black: #000000;
+$color-white: #FFFFFF;
+$color-grey: #4d4d4d;
+
 .cards-container {
-  background-color: #000000;
+  background-color: $color-black;
   .card {
-    border: 1px solid #000000;
+    border: 1px solid $color-black;
     .card-column {
       margin-bottom: 15px;
       margin-top: 15px;
@@ -11,16 +15,16 @@
       top: 39%;
       width: 100%;
       background-color: rgba(27, 27, 28, 0.7);
-      color: #ffffff;
+      color: $color-white;
       padding-left: 10px;
     }
     .card-body {
       background-color: rgba(27, 27, 28, 0.9);
-      color: #ffffff;
+      color: $color-white;
       min-height: 270px;
       .card-table {
         tr {
-          border-bottom: 1px solid #4d4d4d;
+          border-bottom: 1px solid $color-grey;
           &:last-child {
             border-bottom: none;
           }
