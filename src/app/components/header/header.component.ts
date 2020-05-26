@@ -16,9 +16,9 @@ export class HeaderComponent implements OnInit {
   public filtersList = [];
   public constants = Constants.header;
 
-  @Output() public filterKey: EventEmitter<IKeyValue[]> = new EventEmitter();
-  @Output() public searchEvent: EventEmitter<string> = new EventEmitter();
-  @Output() public sort: EventEmitter<string> = new EventEmitter();
+  @Output() public filterKeyEmitter: EventEmitter<IKeyValue[]> = new EventEmitter();
+  @Output() public searchEmitter: EventEmitter<string> = new EventEmitter();
+  @Output() public sortOrderEmitter: EventEmitter<string> = new EventEmitter();
 
   constructor(private filterService: FilterInputService) {}
 
@@ -38,8 +38,8 @@ export class HeaderComponent implements OnInit {
    * @memberof HeaderComponent
    */
   public valueChanged(): void {
-    this.sort.emit(this.sortOrder);
-    this.filterKey.emit(this.filtersList);
+    this.sortOrderEmitter.emit(this.sortOrder);
+    this.filterKeyEmitter.emit(this.filtersList);
   }
 
   /**
@@ -47,7 +47,7 @@ export class HeaderComponent implements OnInit {
    * @memberof HeaderComponent
    */
   public searchByName(): void {
-    this.searchEvent.emit(this.nameSearch);
+    this.searchEmitter.emit(this.nameSearch);
     this.nameSearch = '';
   }
 
@@ -68,6 +68,6 @@ export class HeaderComponent implements OnInit {
     } else {
       this.filtersList = [];
     }
-    this.filterKey.emit(this.filtersList);
+    this.filterKeyEmitter.emit(this.filtersList);
   }
 }

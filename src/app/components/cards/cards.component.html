@@ -1,7 +1,7 @@
 <app-header
-  (sort)="sortCharacters($event)"
-  (searchEvent)="search($event)"
-  (filterKey)="filterSearch($event)"
+  (sortOrderEmitter)="sortCharacters($event)"
+  (searchEmitter)="search($event)"
+  (filterKeyEmitter)="filterSearch($event)"
 ></app-header>
 <ng-container *ngIf="!isError; else errorTemplate">
   <ng-container *ngIf="charactersList && charactersList.length === 0; else characterListTemplate">
