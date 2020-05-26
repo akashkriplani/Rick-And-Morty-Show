@@ -1,7 +1,7 @@
 export const Constants = {
     cards: {
      apiErrorMessage: 'Cannot fetch data. Please try again by refreshing the page.',
-     created: 'created:',
+     created: '- created',
      gender: 'GENDER',
      id: 'id:',
      location: 'LAST LOCATION',
@@ -21,6 +21,7 @@ export const Constants = {
      descending: 'Descending',
      search: 'Search',
      searchByName: 'Search by Name',
-     selectedFilters: 'Selected Filters'
+     selectedFilters: 'Selected Filters',
+     sortById: 'Sort by Id'
     }
 };

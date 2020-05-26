@@ -1,6 +1,8 @@
 $color-black: #000000;
+$color-darkgrey: #BBBBBB;
 $color-white: #FFFFFF;
 $color-grey: #4d4d4d;
+$color-orange: rgb(265, 165, 0);
 
 .cards-container {
   background-color: $color-black;
@@ -9,9 +11,10 @@ $color-grey: #4d4d4d;
   }
   .card {
     border: 1px solid $color-black;
+    background-color: $color-black;
     .card-overlay {
       position: absolute;
-      top: 42%;
+      top: 41.2%;
       width: 100%;
       background-color: rgba(0, 0, 0, 0.5);
       color: $color-white;
@@ -24,6 +27,13 @@ $color-grey: #4d4d4d;
       .card-table {
         tr {
           border-bottom: 1px solid $color-grey;
+          td {
+            color: $color-darkgrey;
+            &:last-child {
+              color: $color-orange;
+              text-align: right;
+            }
+          }
           &:last-child {
             border-bottom: none;
           }
