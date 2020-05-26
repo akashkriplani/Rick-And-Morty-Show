@@ -38,6 +38,7 @@ export class HeaderComponent implements OnInit {
    */
   public valueChanged(): void {
     this.sort.emit(this.sortOrder);
+    this.filterKey.emit(this.filtersList);
   }
 
   /**
