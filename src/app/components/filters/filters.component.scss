@@ -1,7 +1,11 @@
-.box {
-  border: 1px solid #000000;
-  margin-top: 30px;
-}
-li {
-  list-style-type: none;
+.filter-container {
+  .box {
+    border: 1px solid #000000;
+    margin-top: 30px;
+  }
+
+  li {
+    list-style-type: none;
+  }
+  
 }

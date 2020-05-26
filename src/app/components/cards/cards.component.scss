@@ -1,30 +1,31 @@
-.card {
-  border: 1px solid #000000;
-}
-.card-body {
-  background-color: rgba(27, 27, 28, 0.9);
-  color: #ffffff;
-  min-height: 270px;
-}
-.overlay {
-  position: absolute;
-  top: 39%;
-  width: 100%;
-  background-color: rgba(27, 27, 28, 0.7);
-  color: #ffffff;
-  padding-left: 10px;
-}
-.card-body table tr {
-  border-bottom: 1px solid #4d4d4d;
-}
-
-.card-body table tr:last-child {
-  border-bottom: none;
-}
-.cardColumn {
-  margin-bottom: 15px;
-  margin-top: 15px;
-}
-.cardRow {
+.cards-container {
   background-color: #000000;
+  .card {
+    border: 1px solid #000000;
+    .card-column {
+      margin-bottom: 15px;
+      margin-top: 15px;
+    }
+    .card-overlay {
+      position: absolute;
+      top: 39%;
+      width: 100%;
+      background-color: rgba(27, 27, 28, 0.7);
+      color: #ffffff;
+      padding-left: 10px;
+    }
+    .card-body {
+      background-color: rgba(27, 27, 28, 0.9);
+      color: #ffffff;
+      min-height: 270px;
+      .card-table {
+        tr {
+          border-bottom: 1px solid #4d4d4d;
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
 }

@@ -8,16 +8,16 @@
     {{constants?.noResultsFound}}
   </ng-container>
   <ng-template #characterListTemplate>
-    <div class="row cardRow">
-      <div class="col-md-3 col-xs-12 cardColumn" *ngFor="let character of charactersList">
+    <div class="row cards-container">
+      <div class="col-md-3 col-xs-12 card-column" *ngFor="let character of charactersList">
         <div class="card">
           <img class="card-img-top" src="{{ character?.image }}" alt="Card image cap" />
-          <div class="overlay">
+          <div class="card-overlay">
             <h6>{{ character?.name }}</h6>
             <span>{{constants?.id}} {{ character?.id }} {{constants?.created}} {{ character?.created + ' years ago' }}</span>
           </div>
           <div class="card-body">
-            <table>
+            <table class="card-table">
               <tr>
                 <td>{{constants?.status}}</td>
                 <td>{{ character?.status }}</td>
