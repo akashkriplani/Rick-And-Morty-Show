@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FiltersService } from '../services/filters.service';
+import { FiltersService } from '../../services/filters.service';
 import { Observable } from 'rxjs';
-import { IRickMortyApiResponse, ICharacter } from '../interfaces/characters.interface';
-import { Constants } from '../constants/constants';
-import { SortOrder } from '../enumerations/sort-order.enum';
+import { IRickMortyApiResponse, ICharacter } from '../../interfaces/characters.interface';
+import { Constants } from '../../constants/constants';
+import { SortOrder } from '../../enumerations/sort-order.enum';
 
 @Component({
   selector: 'app-cards',

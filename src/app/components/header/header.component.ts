@@ -1,8 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FilterInputService } from '../services/filter-input.service';
-import { IKeyValue } from '../interfaces/characters.interface';
-import { Constants } from '../constants/constants';
-import { SortOrder } from '../enumerations/sort-order.enum';
+import { FilterInputService } from '../../services/filter-input.service';
+import { IKeyValue } from '../../interfaces/characters.interface';
+import { Constants } from '../../constants/constants';
+import { SortOrder } from '../../enumerations/sort-order.enum';
 
 @Component({
   selector: 'app-header',

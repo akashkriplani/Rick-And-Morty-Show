@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FilterInputService } from '../services/filter-input.service';
-import { IKeyValue } from '../interfaces/characters.interface';
-import { Constants } from '../constants/constants';
+import { FilterInputService } from '../../services/filter-input.service';
+import { IKeyValue } from '../../interfaces/characters.interface';
+import { Constants } from '../../constants/constants';
 
 @Component({
   selector: 'app-filters',
