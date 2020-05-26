@@ -9,7 +9,7 @@
   </ng-container>
   <ng-template #characterListTemplate>
     <div class="row cards-container">
-      <div class="col-md-3 col-xs-12 card-column" *ngFor="let character of charactersList">
+      <div class="col-md-3 col-sm-4 col-xs-12 cards-container-column" *ngFor="let character of charactersList">
         <div class="card">
           <img class="card-img-top" src="{{ character?.image }}" alt="Card image cap" />
           <div class="card-overlay">
