@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FilterInputService } from '../services/filter-input.service';
 import { IKeyValue } from '../interfaces/characters.interface';
 import { Constants } from '../constants/constants';
+import { SortOrder } from '../enumerations/sort-order.enum';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ import { Constants } from '../constants/constants';
 export class HeaderComponent implements OnInit {
 
   public nameSearch = '';
-  public sortOrder = 'ascending';
+  public sortOrder = SortOrder.Ascending;
   public filtersList = [];
   public constants = Constants.header;
 

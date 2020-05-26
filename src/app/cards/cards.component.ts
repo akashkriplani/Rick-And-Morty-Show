@@ -3,6 +3,7 @@ import { FiltersService } from '../services/filters.service';
 import { Observable } from 'rxjs';
 import { IRickMortyApiResponse, ICharacter } from '../interfaces/characters.interface';
 import { Constants } from '../constants/constants';
+import { SortOrder } from '../enumerations/sort-order.enum';
 
 @Component({
   selector: 'app-cards',
@@ -36,9 +37,9 @@ export class CardsComponent implements OnInit {
    * @returns void
    */
   public sortCharacters(sortOrder: string): void {
-    if (sortOrder === 'ascending') {
+    if (sortOrder === SortOrder.Ascending) {
       this.characters.sort((a, b) => a.id - b.id);
-    } else if (sortOrder === 'descending') {
+    } else if (sortOrder === SortOrder.Descending) {
       this.characters = this.characters.sort((a, b) => b.id - a.id);
     }
     this.charactersList = this.characters;
