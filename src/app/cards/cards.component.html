@@ -5,7 +5,7 @@
 ></app-header>
 <ng-container *ngIf="!isError; else errorTemplate">
   <ng-container *ngIf="charactersList && charactersList.length === 0; else characterListTemplate">
-    No results found.
+    {{constants?.noResultsFound}}
   </ng-container>
   <ng-template #characterListTemplate>
     <div class="row cardRow">
@@ -14,28 +14,28 @@
           <img class="card-img-top" src="{{ character?.image }}" alt="Card image cap" />
           <div class="overlay">
             <h6>{{ character?.name }}</h6>
-            <span>id: {{ character?.id }} created: {{ character?.created | date: "y" }}</span>
+            <span>id: {{ character?.id }} {{constants?.created}} {{ character?.created | date: "y" }}</span>
           </div>
           <div class="card-body">
             <table>
               <tr>
-                <td>STATUS</td>
+                <td>{{constants?.status}}</td>
                 <td>{{ character?.status }}</td>
               </tr>
               <tr>
-                <td>SPECIES</td>
+                <td>{{constants?.species}}</td>
                 <td>{{ character?.species }}</td>
               </tr>
               <tr>
-                <td>GENDER</td>
+                <td>{{constants?.gender}}</td>
                 <td>{{ character?.gender }}</td>
               </tr>
               <tr>
-                <td>ORIGIN</td>
+                <td>{{constants?.origin}}</td>
                 <td>{{ character?.origin?.name }}</td>
               </tr>
               <tr>
-                <td>LAST LOCATION</td>
+                <td>{{constants?.location}}</td>
                 <td>{{ character?.location?.name }}</td>
               </tr>
             </table>
@@ -46,5 +46,5 @@
   </ng-template>
 </ng-container>
 <ng-template #errorTemplate>
-  Cannot fetch data. Please try again by refreshing the page.
+  {{constants?.apiErrorMessage}}
 </ng-template>

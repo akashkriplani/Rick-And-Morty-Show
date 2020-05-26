@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FilterInputService } from '../services/filter-input.service';
 import { IKeyValue } from '../interfaces/characters.interface';
+import { Constants } from '../constants/constants';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +9,12 @@ import { IKeyValue } from '../interfaces/characters.interface';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+
   public nameSearch = '';
   public sortOrder = 'ascending';
   public filtersList = [];
+  public constants = Constants.header;
+
   @Output() public filterKey: EventEmitter<IKeyValue[]> = new EventEmitter();
   @Output() public searchEvent: EventEmitter<string> = new EventEmitter();
   @Output() public sort: EventEmitter<string> = new EventEmitter();

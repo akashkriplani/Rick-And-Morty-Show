@@ -1,12 +1,12 @@
 <div class=" headerComponent">
-  <h1>Selected Filters</h1>
+  <h1>{{constants?.selectedFilters}}</h1>
   <div>
     <span class="badge badge-secondary badgeChip"
       *ngFor="let filter of filtersList">{{ filter }}
       <i class="fa fa-times"></i></span>
   </div>
 
-  <p>Search by Name</p>
+  <p>{{constants?.searchByName}}</p>
   <div class="row form-group searchContainer">
     <div class="col-md-2 col-xs-12">
       <input
@@ -18,7 +18,7 @@
       />
     </div>
     <div class="col-md-1 col-xs-12">
-      <button (click)="searchByName()" class="form-control">Search</button>
+      <button (click)="searchByName()" class="form-control">{{constants?.search}}</button>
     </div>
     <div class="col-md-6"></div>
     <div class="col-md-3">
@@ -28,8 +28,8 @@
         (change)="valueChanged()"
         class="float-right form-control"
       >
-        <option value="ascending">Ascending</option>
-        <option value="descending">Descending</option>
+        <option value="ascending">{{constants?.ascending}}</option>
+        <option value="descending">{{constants?.descending}}</option>
       </select>
     </div>
   </div>

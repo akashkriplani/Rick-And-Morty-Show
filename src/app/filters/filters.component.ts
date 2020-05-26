@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FilterInputService } from '../services/filter-input.service';
 import { IKeyValue } from '../interfaces/characters.interface';
+import { Constants } from '../constants/constants';
 
 @Component({
   selector: 'app-filters',
@@ -12,6 +13,7 @@ export class FiltersComponent {
 
   public filterArray: IKeyValue[];
   public allFilters: IKeyValue[] = [];
+  public constants = Constants.filters;
 
   public species: IKeyValue[] = [
     { key: 'species', value: 'Human', checked: false },

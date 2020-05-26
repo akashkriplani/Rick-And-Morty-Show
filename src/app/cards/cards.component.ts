@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FiltersService } from '../services/filters.service';
 import { Observable } from 'rxjs';
 import { IRickMortyApiResponse, ICharacter } from '../interfaces/characters.interface';
+import { Constants } from '../constants/constants';
 
 @Component({
   selector: 'app-cards',
@@ -16,6 +17,7 @@ export class CardsComponent implements OnInit {
   public charactersList: ICharacter[];
   public isError: boolean;
   public year = new Date();
+  public constants = Constants.cards;
 
   constructor(private filterService: FiltersService) {}
 
@@ -95,7 +97,6 @@ export class CardsComponent implements OnInit {
       this.charactersList = this.characters;
     }, error => {
       this.isError = true;
-      console.log('Error fetching data');
     });
   }
 
