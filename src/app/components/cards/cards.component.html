@@ -5,7 +5,9 @@
 ></app-header>
 <ng-container *ngIf="!isError; else errorTemplate">
   <ng-container *ngIf="charactersList && charactersList.length === 0; else characterListTemplate">
-    {{constants?.noResultsFound}}
+    <div class="alert alert-info" role="alert">
+      {{constants?.noResultsFound}}
+    </div>
   </ng-container>
   <ng-template #characterListTemplate>
     <div class="row cards-container">
@@ -46,5 +48,7 @@
   </ng-template>
 </ng-container>
 <ng-template #errorTemplate>
-  {{constants?.apiErrorMessage}}
+  <div class="alert alert-danger" role="alert">
+    {{constants?.apiErrorMessage}}
+  </div>
 </ng-template>
